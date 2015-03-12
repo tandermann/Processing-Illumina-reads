@@ -26,7 +26,7 @@ echo "sorting phased bam files";
 samtools sort ../$sample-results/$refbase/$sample-$refbase.allele.0.bam ../$sample-results/$refbase/$sample-$refbase.allele.0.sorted;
 samtools sort ../$sample-results/$refbase/$sample-$refbase.allele.1.bam ../$sample-results/$refbase/$sample-$refbase.allele.1.sorted;
 echo "mpileup and creating fq files";
-samtools mpileup -uf $2 ../$sample-results/$refbase/$sample-$refbase.allele.0.sorted.bam | bcftools view -cg - | vcfutils.pl vcf2fq > ../$sample-results/$refbase/$sample-$refbase.allele.0.fq;
+samtools mpileup -u -f $2 ../$sample-results/$refbase/$sample-$refbase.allele.0.sorted.bam | bcftools view -cg - | vcfutils.pl vcf2fq > ../$sample-results/$refbase/$sample-$refbase.allele.0.fq;
 echo "...";
 samtools mpileup -u -f $2 ../$sample-results/$refbase/$sample-$refbase.allele.1.sorted.bam | bcftools view -cg - | vcfutils.pl vcf2fq > ../$sample-results/$refbase/$sample-$refbase.allele.1.fq;
 echo "...";
