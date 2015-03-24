@@ -29,9 +29,9 @@ cp $locus/*.fasta .;
 fastaname_original=$(grep ">" *original.fasta);
 fastaname_allele0=$(grep ">" *allele.0.fasta);
 fastaname_allele1=$(grep ">" *allele.1.fasta);
-rpl "$fastaname_original" ">$sample-$genename-original" ./*original.fasta;
-rpl "$fastaname_allele0" ">$sample-$genename-allele0" ./*allele.0.fasta;
-rpl "$fastaname_allele1" ">$sample-$genename-allele1" ./*allele.1.fasta;
+rpl "$fastaname_original" ">$sample-original" ./*original.fasta;
+rpl "$fastaname_allele0" ">$sample-allele0" ./*allele.0.fasta;
+rpl "$fastaname_allele1" ">$sample-allele1" ./*allele.1.fasta;
 mkdir summary_results;
 mkdir summary_results/$genename;
 mkdir summary_results/bam-files
